@@ -1,0 +1,15 @@
+name: ELK
+
+services:
+  elasticsearch:
+    image: elasticsearch:8.14.3
+    container_name: elasticsearch
+    environment:    
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - 9200:9200
+    volumes:
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+
+  
