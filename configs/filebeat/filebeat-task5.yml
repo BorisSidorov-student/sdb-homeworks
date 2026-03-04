@@ -1,0 +1,20 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /var/log/nginx/example-http.com-acess.log
+
+    fields:
+      log_type: nginx
+
+  - type: log
+    enabled: true
+    paths:
+      - /var/log/redis/*
+
+    fields:
+      log_type: redis
+
+output.logstash:
+  enabled: true
+  hosts: [ "${LOGSTASH_URL}" ]

@@ -1,0 +1,71 @@
+name: ELK
+
+services:
+  elasticsearch:
+    image: elasticsearch:8.14.3
+    container_name: elasticsearch
+    environment:    
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - 9200:9200
+    volumes:
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+
+  kibana:
+    image: kibana:8.14.3
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200  
+
+  logstash:
+    image: logstash:8.14.3
+    container_name: logstash
+    user: 1000:4
+    environment:
+      XPACK_MONITORING_ENABLED: "false"
+      ES_HOST: "elasticsearch:9200"
+      ACTIVE_PIPELINE: filebeat
+    volumes:
+      - ./configs/logstash/pipelines.yml:/usr/share/logstash/config/pipelines.yml
+      - ./configs/logstash/pipelines:/usr/share/logstash/config/pipelines
+      # - /var/log/nginx:/var/log/nginx/
+    depends_on:
+      - elasticsearch
+
+  filebeat:
+    image: elastic/filebeat:8.14.3
+    container_name: filebeat
+    user: 1000:4
+    volumes:
+      - ./configs/filebeat/data/filebeat:/usr/share/filebeat/data
+      - ./configs/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - /var/log/nginx:/var/log/nginx/
+      - ./configs/redis/logs/:/var/log/redis
+    environment:
+      LOGSTASH_URL: "logstash:5044"
+    depends_on:
+      - elasticsearch
+      - logstash
+  
+
+  redis:
+    image: redis:8.6.1
+    container_name: redis
+    user: 1000:4
+    ports:
+      - "6379:6379"
+    command: 
+      - "redis-server"
+      - "/usr/local/etc/redis/redis.conf"
+    volumes:
+      - ./configs/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./configs/redis/logs/:/var/log/redis
+      - ./configs/redis/data/:/data
+      
+
+      

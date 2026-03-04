@@ -1,0 +1,343 @@
+1:signal-handler (1772558782) Received SIGTERM scheduling shutdown...
+1:M 03 Mar 2026 17:26:22.122 * User requested shutdown...
+1:M 03 Mar 2026 17:26:22.122 * Calling fsync() on the AOF file.
+1:M 03 Mar 2026 17:26:22.124 * Saving the final RDB snapshot before exiting.
+1:M 03 Mar 2026 17:26:22.124 * BGSAVE done, 0 keys saved, 0 keys skipped, 88 bytes written.
+1:M 03 Mar 2026 17:26:22.131 * DB saved on disk
+1:M 03 Mar 2026 17:26:22.141 # Redis is now ready to exit, bye bye...
+1:C 03 Mar 2026 17:31:45.387 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:C 03 Mar 2026 17:31:45.388 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 03 Mar 2026 17:31:45.388 * Redis version=8.6.1, bits=64, commit=00000000, modified=1, pid=1, just started
+1:C 03 Mar 2026 17:31:45.388 * Configuration loaded
+1:M 03 Mar 2026 17:31:45.388 * monotonic clock: POSIX clock_gettime
+1:M 03 Mar 2026 17:31:45.389 * Running mode=standalone, port=6379.
+1:M 03 Mar 2026 17:31:45.389 * <bf> RedisBloom version 8.6.0 (Git=unknown)
+1:M 03 Mar 2026 17:31:45.389 * <bf> Registering configuration options: [
+1:M 03 Mar 2026 17:31:45.389 * <bf> 	{ bf-error-rate       :      0.01 }
+1:M 03 Mar 2026 17:31:45.389 * <bf> 	{ bf-initial-size     :       100 }
+1:M 03 Mar 2026 17:31:45.389 * <bf> 	{ bf-expansion-factor :         2 }
+1:M 03 Mar 2026 17:31:45.389 * <bf> 	{ cf-bucket-size      :         2 }
+1:M 03 Mar 2026 17:31:45.389 * <bf> 	{ cf-initial-size     :      1024 }
+1:M 03 Mar 2026 17:31:45.389 * <bf> 	{ cf-max-iterations   :        20 }
+1:M 03 Mar 2026 17:31:45.389 * <bf> 	{ cf-expansion-factor :         1 }
+1:M 03 Mar 2026 17:31:45.390 * <bf> 	{ cf-max-expansions   :        32 }
+1:M 03 Mar 2026 17:31:45.390 * <bf> ]
+1:M 03 Mar 2026 17:31:45.390 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+1:M 03 Mar 2026 17:31:45.392 * <search> Redis version found by RedisSearch : 8.6.1 - oss
+1:M 03 Mar 2026 17:31:45.392 * <search> RediSearch version 8.6.0 (Git=7782b97)
+1:M 03 Mar 2026 17:31:45.393 * <search> Low level api version 1 initialized successfully
+1:M 03 Mar 2026 17:31:45.393 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, oom policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000, default scorer: BM25STD, 
+1:M 03 Mar 2026 17:31:45.393 * <search> Initialized thread pools!
+1:M 03 Mar 2026 17:31:45.393 * <search> Disabled workers threadpool of size 0
+1:M 03 Mar 2026 17:31:45.393 * <search> Subscribe to config changes
+1:M 03 Mar 2026 17:31:45.393 * <search> Subscribe to cluster slot migration events
+1:M 03 Mar 2026 17:31:45.393 * <search> Enabled role change notification
+1:M 03 Mar 2026 17:31:45.393 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+1:M 03 Mar 2026 17:31:45.393 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> RedisTimeSeries version 80600, git_sha=05fd355db748676861dc4c17d19c8c1ca74c0154
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> Redis version found by RedisTimeSeries : 8.6.1 - oss
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> Registering configuration options: [
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> 	{ ts-compaction-policy   :              }
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> 	{ ts-num-threads         :            3 }
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> 	{ ts-retention-policy    :            0 }
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> 	{ ts-duplicate-policy    :        block }
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> 	{ ts-chunk-size-bytes    :         4096 }
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> 	{ ts-encoding            :   compressed }
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> 	{ ts-ignore-max-time-diff:            0 }
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> 	{ ts-ignore-max-val-diff :     0.000000 }
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> ]
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> Detected redis oss
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> Subscribe to ASM events
+1:M 03 Mar 2026 17:31:45.394 * <timeseries> Enabled diskless replication
+1:M 03 Mar 2026 17:31:45.394 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> Created new data type 'ReJSON-RL'
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> version: 80600 git sha: unknown branch: unknown
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> Exported RedisJSON_V1 API
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> Exported RedisJSON_V2 API
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> Exported RedisJSON_V3 API
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> Exported RedisJSON_V4 API
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> Exported RedisJSON_V5 API
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> Exported RedisJSON_V6 API
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> Enabled diskless replication
+1:M 03 Mar 2026 17:31:45.395 * <ReJSON> Initialized shared string cache, thread safe: true.
+1:M 03 Mar 2026 17:31:45.395 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+1:M 03 Mar 2026 17:31:45.395 * <search> Acquired RedisJSON_V6 API
+1:M 03 Mar 2026 17:31:45.396 * Server initialized
+1:M 03 Mar 2026 17:31:45.396 * <search> Changing workers threadpool size from 0 to 4
+1:M 03 Mar 2026 17:31:45.396 * <search> Enabled workers threadpool of size 4
+1:M 03 Mar 2026 17:31:45.396 * <search> Loading event started
+1:M 03 Mar 2026 17:31:45.420 * Reading RDB base file on AOF loading...
+1:M 03 Mar 2026 17:31:45.420 * Loading RDB produced by version 8.6.1
+1:M 03 Mar 2026 17:31:45.420 * RDB age 4650 seconds
+1:M 03 Mar 2026 17:31:45.420 * RDB memory usage when created 1.26 Mb
+1:M 03 Mar 2026 17:31:45.420 * RDB is base AOF
+1:M 03 Mar 2026 17:31:45.420 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 03 Mar 2026 17:31:45.420 * <search> Draining workers thread pool with threshold 100
+1:M 03 Mar 2026 17:31:45.420 * DB loaded from base file appendonly.aof.1.base.rdb: 0.025 seconds
+1:M 03 Mar 2026 17:31:45.420 * <search> Changing workers threadpool size from 4 to 0
+1:M 03 Mar 2026 17:31:45.420 * <search> Scheduling config_reduce_threads_job to remove all 4 threads when empty
+1:M 03 Mar 2026 17:31:45.420 * <search> Disabled workers threadpool of size 4
+1:M 03 Mar 2026 17:31:45.420 * <search> Loading event ended successfully
+1:M 03 Mar 2026 17:31:45.420 * DB loaded from append only file: 0.025 seconds
+1:M 03 Mar 2026 17:31:45.435 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+1:M 03 Mar 2026 17:31:45.435 * Ready to accept connections tcp
+1:M 03 Mar 2026 17:31:45.435 # WARNING: Redis does not require authentication and is not protected by network restrictions. Redis will accept connections from any IP address on any network interface.
+1:signal-handler (1772559330) Received SIGTERM scheduling shutdown...
+1:M 03 Mar 2026 17:35:30.818 * User requested shutdown...
+1:M 03 Mar 2026 17:35:30.818 * Calling fsync() on the AOF file.
+1:M 03 Mar 2026 17:35:30.819 * Saving the final RDB snapshot before exiting.
+1:M 03 Mar 2026 17:35:30.819 * BGSAVE done, 0 keys saved, 0 keys skipped, 88 bytes written.
+1:M 03 Mar 2026 17:35:30.824 * DB saved on disk
+1:M 03 Mar 2026 17:35:30.829 # Redis is now ready to exit, bye bye...
+1:C 03 Mar 2026 17:37:47.948 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:C 03 Mar 2026 17:37:47.948 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 03 Mar 2026 17:37:47.948 * Redis version=8.6.1, bits=64, commit=00000000, modified=1, pid=1, just started
+1:C 03 Mar 2026 17:37:47.948 * Configuration loaded
+1:M 03 Mar 2026 17:37:47.948 * monotonic clock: POSIX clock_gettime
+1:M 03 Mar 2026 17:37:47.949 * Running mode=standalone, port=6379.
+1:M 03 Mar 2026 17:37:47.949 * <bf> RedisBloom version 8.6.0 (Git=unknown)
+1:M 03 Mar 2026 17:37:47.949 * <bf> Registering configuration options: [
+1:M 03 Mar 2026 17:37:47.949 * <bf> 	{ bf-error-rate       :      0.01 }
+1:M 03 Mar 2026 17:37:47.949 * <bf> 	{ bf-initial-size     :       100 }
+1:M 03 Mar 2026 17:37:47.949 * <bf> 	{ bf-expansion-factor :         2 }
+1:M 03 Mar 2026 17:37:47.949 * <bf> 	{ cf-bucket-size      :         2 }
+1:M 03 Mar 2026 17:37:47.949 * <bf> 	{ cf-initial-size     :      1024 }
+1:M 03 Mar 2026 17:37:47.950 * <bf> 	{ cf-max-iterations   :        20 }
+1:M 03 Mar 2026 17:37:47.950 * <bf> 	{ cf-expansion-factor :         1 }
+1:M 03 Mar 2026 17:37:47.950 * <bf> 	{ cf-max-expansions   :        32 }
+1:M 03 Mar 2026 17:37:47.950 * <bf> ]
+1:M 03 Mar 2026 17:37:47.950 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+1:M 03 Mar 2026 17:37:47.952 * <search> Redis version found by RedisSearch : 8.6.1 - oss
+1:M 03 Mar 2026 17:37:47.952 * <search> RediSearch version 8.6.0 (Git=7782b97)
+1:M 03 Mar 2026 17:37:47.952 * <search> Low level api version 1 initialized successfully
+1:M 03 Mar 2026 17:37:47.953 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, oom policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000, default scorer: BM25STD, 
+1:M 03 Mar 2026 17:37:47.953 * <search> Initialized thread pools!
+1:M 03 Mar 2026 17:37:47.953 * <search> Disabled workers threadpool of size 0
+1:M 03 Mar 2026 17:37:47.953 * <search> Subscribe to config changes
+1:M 03 Mar 2026 17:37:47.953 * <search> Subscribe to cluster slot migration events
+1:M 03 Mar 2026 17:37:47.953 * <search> Enabled role change notification
+1:M 03 Mar 2026 17:37:47.953 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+1:M 03 Mar 2026 17:37:47.953 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> RedisTimeSeries version 80600, git_sha=05fd355db748676861dc4c17d19c8c1ca74c0154
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> Redis version found by RedisTimeSeries : 8.6.1 - oss
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> Registering configuration options: [
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> 	{ ts-compaction-policy   :              }
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> 	{ ts-num-threads         :            3 }
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> 	{ ts-retention-policy    :            0 }
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> 	{ ts-duplicate-policy    :        block }
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> 	{ ts-chunk-size-bytes    :         4096 }
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> 	{ ts-encoding            :   compressed }
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> 	{ ts-ignore-max-time-diff:            0 }
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> 	{ ts-ignore-max-val-diff :     0.000000 }
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> ]
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> Detected redis oss
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> Subscribe to ASM events
+1:M 03 Mar 2026 17:37:47.954 * <timeseries> Enabled diskless replication
+1:M 03 Mar 2026 17:37:47.954 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> Created new data type 'ReJSON-RL'
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> version: 80600 git sha: unknown branch: unknown
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> Exported RedisJSON_V1 API
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> Exported RedisJSON_V2 API
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> Exported RedisJSON_V3 API
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> Exported RedisJSON_V4 API
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> Exported RedisJSON_V5 API
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> Exported RedisJSON_V6 API
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> Enabled diskless replication
+1:M 03 Mar 2026 17:37:47.955 * <ReJSON> Initialized shared string cache, thread safe: true.
+1:M 03 Mar 2026 17:37:47.955 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+1:M 03 Mar 2026 17:37:47.955 * <search> Acquired RedisJSON_V6 API
+1:M 03 Mar 2026 17:37:47.955 * Server initialized
+1:M 03 Mar 2026 17:37:47.955 * <search> Changing workers threadpool size from 0 to 4
+1:M 03 Mar 2026 17:37:47.955 * <search> Enabled workers threadpool of size 4
+1:M 03 Mar 2026 17:37:47.955 * <search> Loading event started
+1:M 03 Mar 2026 17:37:47.956 * Reading RDB base file on AOF loading...
+1:M 03 Mar 2026 17:37:47.956 * Loading RDB produced by version 8.6.1
+1:M 03 Mar 2026 17:37:47.956 * RDB age 5012 seconds
+1:M 03 Mar 2026 17:37:47.956 * RDB memory usage when created 1.26 Mb
+1:M 03 Mar 2026 17:37:47.956 * RDB is base AOF
+1:M 03 Mar 2026 17:37:47.956 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 03 Mar 2026 17:37:47.956 * <search> Draining workers thread pool with threshold 100
+1:M 03 Mar 2026 17:37:47.956 * DB loaded from base file appendonly.aof.1.base.rdb: 0.001 seconds
+1:M 03 Mar 2026 17:37:47.956 * <search> Changing workers threadpool size from 4 to 0
+1:M 03 Mar 2026 17:37:47.956 * <search> Scheduling config_reduce_threads_job to remove all 4 threads when empty
+1:M 03 Mar 2026 17:37:47.956 * <search> Disabled workers threadpool of size 4
+1:M 03 Mar 2026 17:37:47.956 * <search> Loading event ended successfully
+1:M 03 Mar 2026 17:37:47.956 * DB loaded from append only file: 0.001 seconds
+1:M 03 Mar 2026 17:37:47.961 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+1:M 03 Mar 2026 17:37:47.961 * Ready to accept connections tcp
+1:M 03 Mar 2026 17:37:47.961 # WARNING: Redis does not require authentication and is not protected by network restrictions. Redis will accept connections from any IP address on any network interface.
+1:signal-handler (1772560100) Received SIGTERM scheduling shutdown...
+1:M 03 Mar 2026 17:48:20.142 * User requested shutdown...
+1:M 03 Mar 2026 17:48:20.142 * Calling fsync() on the AOF file.
+1:M 03 Mar 2026 17:48:20.143 * Saving the final RDB snapshot before exiting.
+1:M 03 Mar 2026 17:48:20.143 * BGSAVE done, 0 keys saved, 0 keys skipped, 88 bytes written.
+1:M 03 Mar 2026 17:48:20.151 * DB saved on disk
+1:M 03 Mar 2026 17:48:20.162 # Redis is now ready to exit, bye bye...
+1:C 03 Mar 2026 20:36:46.423 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:C 03 Mar 2026 20:36:46.423 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 03 Mar 2026 20:36:46.423 * Redis version=8.6.1, bits=64, commit=00000000, modified=1, pid=1, just started
+1:C 03 Mar 2026 20:36:46.423 * Configuration loaded
+1:M 03 Mar 2026 20:36:46.425 * monotonic clock: POSIX clock_gettime
+1:M 03 Mar 2026 20:36:46.427 * Running mode=standalone, port=6379.
+1:M 03 Mar 2026 20:36:46.427 * <bf> RedisBloom version 8.6.0 (Git=unknown)
+1:M 03 Mar 2026 20:36:46.427 * <bf> Registering configuration options: [
+1:M 03 Mar 2026 20:36:46.428 * <bf> 	{ bf-error-rate       :      0.01 }
+1:M 03 Mar 2026 20:36:46.428 * <bf> 	{ bf-initial-size     :       100 }
+1:M 03 Mar 2026 20:36:46.428 * <bf> 	{ bf-expansion-factor :         2 }
+1:M 03 Mar 2026 20:36:46.428 * <bf> 	{ cf-bucket-size      :         2 }
+1:M 03 Mar 2026 20:36:46.428 * <bf> 	{ cf-initial-size     :      1024 }
+1:M 03 Mar 2026 20:36:46.428 * <bf> 	{ cf-max-iterations   :        20 }
+1:M 03 Mar 2026 20:36:46.428 * <bf> 	{ cf-expansion-factor :         1 }
+1:M 03 Mar 2026 20:36:46.429 * <bf> 	{ cf-max-expansions   :        32 }
+1:M 03 Mar 2026 20:36:46.429 * <bf> ]
+1:M 03 Mar 2026 20:36:46.429 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+1:M 03 Mar 2026 20:36:46.433 * <search> Redis version found by RedisSearch : 8.6.1 - oss
+1:M 03 Mar 2026 20:36:46.433 * <search> RediSearch version 8.6.0 (Git=7782b97)
+1:M 03 Mar 2026 20:36:46.433 * <search> Low level api version 1 initialized successfully
+1:M 03 Mar 2026 20:36:46.434 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, oom policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000, default scorer: BM25STD, 
+1:M 03 Mar 2026 20:36:46.434 * <search> Initialized thread pools!
+1:M 03 Mar 2026 20:36:46.434 * <search> Disabled workers threadpool of size 0
+1:M 03 Mar 2026 20:36:46.434 * <search> Subscribe to config changes
+1:M 03 Mar 2026 20:36:46.434 * <search> Subscribe to cluster slot migration events
+1:M 03 Mar 2026 20:36:46.434 * <search> Enabled role change notification
+1:M 03 Mar 2026 20:36:46.435 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+1:M 03 Mar 2026 20:36:46.437 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+1:M 03 Mar 2026 20:36:46.437 * <timeseries> RedisTimeSeries version 80600, git_sha=05fd355db748676861dc4c17d19c8c1ca74c0154
+1:M 03 Mar 2026 20:36:46.438 * <timeseries> Redis version found by RedisTimeSeries : 8.6.1 - oss
+1:M 03 Mar 2026 20:36:46.438 * <timeseries> Registering configuration options: [
+1:M 03 Mar 2026 20:36:46.438 * <timeseries> 	{ ts-compaction-policy   :              }
+1:M 03 Mar 2026 20:36:46.438 * <timeseries> 	{ ts-num-threads         :            3 }
+1:M 03 Mar 2026 20:36:46.438 * <timeseries> 	{ ts-retention-policy    :            0 }
+1:M 03 Mar 2026 20:36:46.438 * <timeseries> 	{ ts-duplicate-policy    :        block }
+1:M 03 Mar 2026 20:36:46.438 * <timeseries> 	{ ts-chunk-size-bytes    :         4096 }
+1:M 03 Mar 2026 20:36:46.439 * <timeseries> 	{ ts-encoding            :   compressed }
+1:M 03 Mar 2026 20:36:46.439 * <timeseries> 	{ ts-ignore-max-time-diff:            0 }
+1:M 03 Mar 2026 20:36:46.439 * <timeseries> 	{ ts-ignore-max-val-diff :     0.000000 }
+1:M 03 Mar 2026 20:36:46.439 * <timeseries> ]
+1:M 03 Mar 2026 20:36:46.439 * <timeseries> Detected redis oss
+1:M 03 Mar 2026 20:36:46.440 * <timeseries> Subscribe to ASM events
+1:M 03 Mar 2026 20:36:46.440 * <timeseries> Enabled diskless replication
+1:M 03 Mar 2026 20:36:46.440 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+1:M 03 Mar 2026 20:36:46.441 * <ReJSON> Created new data type 'ReJSON-RL'
+1:M 03 Mar 2026 20:36:46.441 * <ReJSON> version: 80600 git sha: unknown branch: unknown
+1:M 03 Mar 2026 20:36:46.442 * <ReJSON> Exported RedisJSON_V1 API
+1:M 03 Mar 2026 20:36:46.442 * <ReJSON> Exported RedisJSON_V2 API
+1:M 03 Mar 2026 20:36:46.443 * <ReJSON> Exported RedisJSON_V3 API
+1:M 03 Mar 2026 20:36:46.443 * <ReJSON> Exported RedisJSON_V4 API
+1:M 03 Mar 2026 20:36:46.443 * <ReJSON> Exported RedisJSON_V5 API
+1:M 03 Mar 2026 20:36:46.443 * <ReJSON> Exported RedisJSON_V6 API
+1:M 03 Mar 2026 20:36:46.443 * <ReJSON> Enabled diskless replication
+1:M 03 Mar 2026 20:36:46.443 * <ReJSON> Initialized shared string cache, thread safe: true.
+1:M 03 Mar 2026 20:36:46.444 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+1:M 03 Mar 2026 20:36:46.444 * <search> Acquired RedisJSON_V6 API
+1:M 03 Mar 2026 20:36:46.444 * Server initialized
+1:M 03 Mar 2026 20:36:46.444 * <search> Changing workers threadpool size from 0 to 4
+1:M 03 Mar 2026 20:36:46.445 * <search> Enabled workers threadpool of size 4
+1:M 03 Mar 2026 20:36:46.445 * <search> Loading event started
+1:M 03 Mar 2026 20:36:46.445 * Reading RDB base file on AOF loading...
+1:M 03 Mar 2026 20:36:46.445 * Loading RDB produced by version 8.6.1
+1:M 03 Mar 2026 20:36:46.445 * RDB age 15751 seconds
+1:M 03 Mar 2026 20:36:46.446 * RDB memory usage when created 1.26 Mb
+1:M 03 Mar 2026 20:36:46.446 * RDB is base AOF
+1:M 03 Mar 2026 20:36:46.446 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 03 Mar 2026 20:36:46.446 * <search> Draining workers thread pool with threshold 100
+1:M 03 Mar 2026 20:36:46.446 * DB loaded from base file appendonly.aof.1.base.rdb: 0.001 seconds
+1:M 03 Mar 2026 20:36:46.446 * <search> Changing workers threadpool size from 4 to 0
+1:M 03 Mar 2026 20:36:46.447 * <search> Scheduling config_reduce_threads_job to remove all 4 threads when empty
+1:M 03 Mar 2026 20:36:46.447 * <search> Disabled workers threadpool of size 4
+1:M 03 Mar 2026 20:36:46.447 * <search> Loading event ended successfully
+1:M 03 Mar 2026 20:36:46.447 * DB loaded from append only file: 0.003 seconds
+1:M 03 Mar 2026 20:36:46.453 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+1:M 03 Mar 2026 20:36:46.453 * Ready to accept connections tcp
+1:M 03 Mar 2026 20:36:46.453 # WARNING: Redis does not require authentication and is not protected by network restrictions. Redis will accept connections from any IP address on any network interface.
+1:signal-handler (1772571636) Received SIGTERM scheduling shutdown...
+1:M 03 Mar 2026 21:00:36.382 * User requested shutdown...
+1:M 03 Mar 2026 21:00:36.382 * Calling fsync() on the AOF file.
+1:M 03 Mar 2026 21:00:36.383 * Saving the final RDB snapshot before exiting.
+1:M 03 Mar 2026 21:00:36.383 * BGSAVE done, 0 keys saved, 0 keys skipped, 88 bytes written.
+1:M 03 Mar 2026 21:00:36.389 * DB saved on disk
+1:M 03 Mar 2026 21:00:36.398 # Redis is now ready to exit, bye bye...
+1:C 03 Mar 2026 21:04:22.878 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:C 03 Mar 2026 21:04:22.879 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 03 Mar 2026 21:04:22.879 * Redis version=8.6.1, bits=64, commit=00000000, modified=1, pid=1, just started
+1:C 03 Mar 2026 21:04:22.879 * Configuration loaded
+1:M 03 Mar 2026 21:04:22.879 * monotonic clock: POSIX clock_gettime
+1:M 03 Mar 2026 21:04:22.880 * Running mode=standalone, port=6379.
+1:M 03 Mar 2026 21:04:22.882 * <bf> RedisBloom version 8.6.0 (Git=unknown)
+1:M 03 Mar 2026 21:04:22.882 * <bf> Registering configuration options: [
+1:M 03 Mar 2026 21:04:22.883 * <bf> 	{ bf-error-rate       :      0.01 }
+1:M 03 Mar 2026 21:04:22.883 * <bf> 	{ bf-initial-size     :       100 }
+1:M 03 Mar 2026 21:04:22.884 * <bf> 	{ bf-expansion-factor :         2 }
+1:M 03 Mar 2026 21:04:22.884 * <bf> 	{ cf-bucket-size      :         2 }
+1:M 03 Mar 2026 21:04:22.884 * <bf> 	{ cf-initial-size     :      1024 }
+1:M 03 Mar 2026 21:04:22.884 * <bf> 	{ cf-max-iterations   :        20 }
+1:M 03 Mar 2026 21:04:22.884 * <bf> 	{ cf-expansion-factor :         1 }
+1:M 03 Mar 2026 21:04:22.884 * <bf> 	{ cf-max-expansions   :        32 }
+1:M 03 Mar 2026 21:04:22.885 * <bf> ]
+1:M 03 Mar 2026 21:04:22.885 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+1:M 03 Mar 2026 21:04:22.892 * <search> Redis version found by RedisSearch : 8.6.1 - oss
+1:M 03 Mar 2026 21:04:22.892 * <search> RediSearch version 8.6.0 (Git=7782b97)
+1:M 03 Mar 2026 21:04:22.892 * <search> Low level api version 1 initialized successfully
+1:M 03 Mar 2026 21:04:22.892 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, oom policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000, default scorer: BM25STD, 
+1:M 03 Mar 2026 21:04:22.892 * <search> Initialized thread pools!
+1:M 03 Mar 2026 21:04:22.892 * <search> Disabled workers threadpool of size 0
+1:M 03 Mar 2026 21:04:22.892 * <search> Subscribe to config changes
+1:M 03 Mar 2026 21:04:22.892 * <search> Subscribe to cluster slot migration events
+1:M 03 Mar 2026 21:04:22.892 * <search> Enabled role change notification
+1:M 03 Mar 2026 21:04:22.893 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+1:M 03 Mar 2026 21:04:22.893 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> RedisTimeSeries version 80600, git_sha=05fd355db748676861dc4c17d19c8c1ca74c0154
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> Redis version found by RedisTimeSeries : 8.6.1 - oss
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> Registering configuration options: [
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> 	{ ts-compaction-policy   :              }
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> 	{ ts-num-threads         :            3 }
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> 	{ ts-retention-policy    :            0 }
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> 	{ ts-duplicate-policy    :        block }
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> 	{ ts-chunk-size-bytes    :         4096 }
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> 	{ ts-encoding            :   compressed }
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> 	{ ts-ignore-max-time-diff:            0 }
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> 	{ ts-ignore-max-val-diff :     0.000000 }
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> ]
+1:M 03 Mar 2026 21:04:22.895 * <timeseries> Detected redis oss
+1:M 03 Mar 2026 21:04:22.896 * <timeseries> Subscribe to ASM events
+1:M 03 Mar 2026 21:04:22.896 * <timeseries> Enabled diskless replication
+1:M 03 Mar 2026 21:04:22.896 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+1:M 03 Mar 2026 21:04:22.901 * <ReJSON> Created new data type 'ReJSON-RL'
+1:M 03 Mar 2026 21:04:22.902 * <ReJSON> version: 80600 git sha: unknown branch: unknown
+1:M 03 Mar 2026 21:04:22.902 * <ReJSON> Exported RedisJSON_V1 API
+1:M 03 Mar 2026 21:04:22.903 * <ReJSON> Exported RedisJSON_V2 API
+1:M 03 Mar 2026 21:04:22.903 * <ReJSON> Exported RedisJSON_V3 API
+1:M 03 Mar 2026 21:04:22.903 * <ReJSON> Exported RedisJSON_V4 API
+1:M 03 Mar 2026 21:04:22.903 * <ReJSON> Exported RedisJSON_V5 API
+1:M 03 Mar 2026 21:04:22.903 * <ReJSON> Exported RedisJSON_V6 API
+1:M 03 Mar 2026 21:04:22.903 * <ReJSON> Enabled diskless replication
+1:M 03 Mar 2026 21:04:22.903 * <ReJSON> Initialized shared string cache, thread safe: true.
+1:M 03 Mar 2026 21:04:22.903 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+1:M 03 Mar 2026 21:04:22.903 * <search> Acquired RedisJSON_V6 API
+1:M 03 Mar 2026 21:04:22.904 * Server initialized
+1:M 03 Mar 2026 21:04:22.904 * <search> Changing workers threadpool size from 0 to 4
+1:M 03 Mar 2026 21:04:22.904 * <search> Enabled workers threadpool of size 4
+1:M 03 Mar 2026 21:04:22.904 * <search> Loading event started
+1:M 03 Mar 2026 21:04:22.905 * Reading RDB base file on AOF loading...
+1:M 03 Mar 2026 21:04:22.907 * Loading RDB produced by version 8.6.1
+1:M 03 Mar 2026 21:04:22.908 * RDB age 17407 seconds
+1:M 03 Mar 2026 21:04:22.908 * RDB memory usage when created 1.26 Mb
+1:M 03 Mar 2026 21:04:22.908 * RDB is base AOF
+1:M 03 Mar 2026 21:04:22.908 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 03 Mar 2026 21:04:22.908 * <search> Draining workers thread pool with threshold 100
+1:M 03 Mar 2026 21:04:22.909 * DB loaded from base file appendonly.aof.1.base.rdb: 0.004 seconds
+1:M 03 Mar 2026 21:04:22.909 * <search> Changing workers threadpool size from 4 to 0
+1:M 03 Mar 2026 21:04:22.909 * <search> Scheduling config_reduce_threads_job to remove all 4 threads when empty
+1:M 03 Mar 2026 21:04:22.909 * <search> Disabled workers threadpool of size 4
+1:M 03 Mar 2026 21:04:22.909 * <search> Loading event ended successfully
+1:M 03 Mar 2026 21:04:22.909 * DB loaded from append only file: 0.005 seconds
+1:M 03 Mar 2026 21:04:22.915 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+1:M 03 Mar 2026 21:04:22.915 * Ready to accept connections tcp
+1:M 03 Mar 2026 21:04:22.915 # WARNING: Redis does not require authentication and is not protected by network restrictions. Redis will accept connections from any IP address on any network interface.
+1:signal-handler (1772572387) Received SIGTERM scheduling shutdown...
+1:M 03 Mar 2026 21:13:07.325 * User requested shutdown...
+1:M 03 Mar 2026 21:13:07.325 * Calling fsync() on the AOF file.
+1:M 03 Mar 2026 21:13:07.326 * Saving the final RDB snapshot before exiting.
+1:M 03 Mar 2026 21:13:07.327 * BGSAVE done, 0 keys saved, 0 keys skipped, 88 bytes written.
+1:M 03 Mar 2026 21:13:07.336 * DB saved on disk
+1:M 03 Mar 2026 21:13:07.343 # Redis is now ready to exit, bye bye...
