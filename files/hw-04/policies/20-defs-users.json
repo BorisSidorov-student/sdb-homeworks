@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "name": "boris",
+      "password_hash": "Yy0KqJaJ4wf5tUvm5pu2toda/s1iyM7XcXAI4Wnicoaisq+z",
+      "tags": "administrator"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "boris",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ]
+}
