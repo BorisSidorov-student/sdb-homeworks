@@ -1,0 +1,182 @@
+name: Rabbitmq
+
+services:
+  rabbitmq1:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq1
+    hostname: rabbitmq1
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 15672:15672
+      - 5672:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+  rabbitmq2:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq2
+    hostname: rabbitmq2
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 5673:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+    depends_on:
+      - rabbitmq1
+  rabbitmq3:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq3
+    hostname: rabbitmq3
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 5674:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+    depends_on:
+      - rabbitmq1
+  rabbitmq4:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq4
+    hostname: rabbitmq4
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 5675:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+    depends_on:
+      - rabbitmq1
+  rabbitmq5:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq5
+    hostname: rabbitmq5
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 5676:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+    depends_on:
+      - rabbitmq1
+  rabbitmq6:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq6
+    hostname: rabbitmq6
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 5677:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+    depends_on:
+      - rabbitmq1
+  rabbitmq7:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq7
+    hostname: rabbitmq7
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 5678:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+    depends_on:
+      - rabbitmq1
+  rabbitmq8:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq8
+    hostname: rabbitmq8
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 5679:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+    depends_on:
+      - rabbitmq1
+  rabbitmq9:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq9
+    hostname: rabbitmq9
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 5680:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+    depends_on:
+      - rabbitmq1
+  rabbitmq10:
+    image: rabbitmq:4.2.4-management
+    container_name: rabbitmq10
+    hostname: rabbitmq10
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+      - 5681:5672
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+    depends_on:
+      - rabbitmq1

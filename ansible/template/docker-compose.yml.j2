@@ -1,0 +1,30 @@
+name: Rabbitmq
+
+services:
+{% for i in range(1, rabbitmq_nodes_count + 1) %}
+  {{ rabbitmq_base_name }}{{ i }}:
+    image: {{ rabbitmq_image }}
+    container_name: {{ rabbitmq_base_name }}{{ i }}
+    hostname: {{ rabbitmq_base_name }}{{ i }}
+    mem_limit: 2g
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+    ports:
+{% if i == 1 %}
+      - {{ rabbitmq_web_port }}:{{ rabbitmq_web_port }}
+      - {{ rabbitmq_port + i - 1 }}:5672
+{%  else %}
+      - {{ rabbitmq_port + i - 1 }}:5672
+{% endif %}
+    volumes:
+      - ./config:/etc/rabbitmq/conf.d
+      - ./policies:/etc/rabbitmq/definitions.d
+      - ./code/pass_hash.sh:/usr/local/bin/pass_hash.sh
+    entrypoint: /usr/local/bin/pass_hash.sh
+{% if i != 1 %}
+    depends_on:
+      - rabbitmq1
+{% endif %}
+{% endfor %}

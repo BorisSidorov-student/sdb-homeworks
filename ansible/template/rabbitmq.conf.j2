@@ -1,0 +1,9 @@
+loopback_users.guest = false
+default_vhost = /
+cluster_formation.peer_discovery_backend = rabbit_peer_discovery_classic_config
+{% for i in range(1, rabbitmq_nodes_count + 1) %}
+cluster_formation.classic_config.nodes.{{ i }} = rabbit@{{ rabbitmq_base_name }}{{ i }}
+{% endfor %}
+cluster_formation.node_cleanup.interval = 30
+definitions.import_backend = local_filesystem
+definitions.local.path = /etc/rabbitmq/definitions.d/

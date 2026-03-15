@@ -1,0 +1,29 @@
+- name: creat cluster rabbitmq
+  hosts: localhost
+  vars:
+    rabbitmq_nodes_count: 10
+    rabbitmq_base_name: rabbitmq
+    rabbitmq_port: 5672
+    rabbitmq_web_port: 15672
+    rabbitmq_image: rabbitmq:4.2.4-management
+
+  tasks:
+  - name: Ensure directories exist
+    file:
+      path: ./config
+      state: directory
+      mode: '0755'
+
+  - name: Create docker yml
+    ansible.builtin.template:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+      mode: '0644'
+    loop:
+      - { src: "./template/docker-compose.yml.j2", dest: "compose.yml" }
+      - { src: "./template/rabbitmq.conf.j2", dest: "./config/20-defaults.conf" }
+  
+  - name: Run docker project
+    community.docker.docker_compose_v2:
+      project_src: .
+      state: present

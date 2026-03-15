@@ -1,0 +1,15 @@
+{
+  "vhosts": [{ "name": "/" }],
+  "policies": [{
+    "vhost": "/",
+    "name": "quorum-settings",
+    "pattern": ".*",
+    "apply-to": "queues",
+    "definition": {
+      "overflow": "reject-publish",
+      "dead-letter-strategy": "at-least-once",
+      "queue-leader-locator": "balanced"
+    },
+    "priority": 0
+  }]
+}
